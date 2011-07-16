@@ -1,0 +1,13 @@
+form {
+    width: 540px;
+    margin: 4px auto;
+    background-color: #cff;
+    padding: 10px;
+    border: solid 1px #ccc;
+}
+
+form ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
