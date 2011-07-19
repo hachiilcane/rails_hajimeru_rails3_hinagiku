@@ -1,7 +1,12 @@
 <h1>タスク一覧</h1>
 
+<%= form_tag [ :search, :tasks ], :method => :get, :style => "text-align: right" do %>
+<%= text_field_tag "query", params[:query] %>
+<%= submit_tag "検索" %>
+<% end %>
+
 <ul class="navigation">
-  <% if params[:action] == "index" %>
+  <% if params[:action] == "index" || params[:action] == "search" %>
   <li class="selected">未完了タスク</li>
   <% else %>
   <li><%= link_to "未完了タスク", :tasks %></li>
