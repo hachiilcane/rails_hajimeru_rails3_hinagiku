@@ -33,5 +33,9 @@
 </table>
 
 <p>
+  <%= will_paginate(@tasks, :previous_label => '&lt;-', :next_label => '-&gt;',
+  :inner_window => 2, :outer_window => 2) %>
+</p>
+<p>
   <%= link_to "新規登録", [ :new, :task ] %>
 </p>
