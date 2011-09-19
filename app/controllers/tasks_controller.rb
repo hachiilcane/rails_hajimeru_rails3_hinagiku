@@ -28,14 +28,21 @@ class TasksController < ApplicationController
   end
 
   def create
-    @task = Task.create(params[:task])
-    redirect_to @task
+    @task = Task.new(params[:task])
+    if @task.save
+      redirect_to @task
+    else
+      render :new
+    end
   end
 
   def update
     @task = Task.find(params[:id])
-    @task.update_attributes params[:task]
-    redirect_to @task
+    if @task.update_attributes params[:task]
+      redirect_to @task
+    else
+      render :edit
+    end
   end
 
   def destroy
