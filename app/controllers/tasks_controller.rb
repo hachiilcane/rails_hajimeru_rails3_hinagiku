@@ -1,10 +1,20 @@
 class TasksController < ApplicationController
   def index
-    @tasks = Task.undone.paginate(:page => params[:page], :per_page => 5)
+    if params[:category_id]
+      @category = Category.find(params[:category_id])
+      @tasks = @category.tasks.undone.paginate(:page => params[:page], :per_page => 5)
+    else
+      @tasks = Task.undone.paginate(:page => params[:page], :per_page => 5)
+    end
   end
 
   def done
-    @tasks = Task.done.paginate(:page => params[:page], :per_page => 5)
+    if params[:category_id]
+      @category = Category.find(params[:category_id])
+      @tasks = @category.tasks.done.paginate(:page => params[:page], :per_page => 5)
+    else
+      @tasks = Task.done.paginate(:page => params[:page], :per_page => 5)
+    end
     render :index
   end
 
