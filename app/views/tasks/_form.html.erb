@@ -9,6 +9,9 @@
 <% end %>
 <ul>
   <li><%= form.label :name %><%= form.text_field :name %></li>
+  <% if Category.all.present? %>
+  <li><%= form.label :category_id %><%= render "radio_buttons", :form => form %></li>
+  <% end %>
   <li>
     <%= form.label :due_date %>
     <%= form.date_select :due_date, :use_month_numbers => true,

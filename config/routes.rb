@@ -5,7 +5,7 @@ Hinagiku::Application.routes.draw do
     get :done, :search, :on => :collection
   end
   resources :categories do
-    resources :tasks do
+    resources :tasks, :only => [ :index ] do
       get :done, :on => :collection
     end
   end
