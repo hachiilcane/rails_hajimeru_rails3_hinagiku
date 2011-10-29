@@ -1,5 +1,7 @@
 <h1>タスク一覧</h1>
 
+<%= render "menu" %>
+
 <%= form_tag [ :search, :tasks ], :method => :get, :style => "text-align: right" do %>
 <%= text_field_tag "query", params[:query] %>
 <%= submit_tag "検索" %>
@@ -25,7 +27,4 @@
 <p>
   <%= will_paginate(@tasks, :previous_label => '&lt;-', :next_label => '-&gt;',
   :inner_window => 2, :outer_window => 2) %>
-</p>
-<p>
-  <%= link_to "新規登録", [ :new, :task ] %>
 </p>
