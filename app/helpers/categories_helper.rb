@@ -1,4 +1,4 @@
-# -*- coding: utf-8-hfs -*-
+# -*- coding: utf-8 -*-
 module CategoriesHelper
   def links_for(category)
     links = []
