@@ -9,6 +9,8 @@ Hinagiku::Application.routes.draw do
       get :done, :on => :collection
     end
   end
+
+  match '*anything' => 'errors#not_found'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

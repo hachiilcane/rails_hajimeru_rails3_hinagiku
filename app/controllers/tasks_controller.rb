@@ -18,11 +18,7 @@ class TasksController < ApplicationController
   end
 
   def show
-    begin
-      @task = Task.find(params[:id])
-    rescue ActiveRecord::RecordNotFound
-      render "errors/not_found", :status => 404
-    end
+    @task = Task.find(params[:id])
   end
 
   def new
